@@ -1,4 +1,4 @@
-﻿' Developer Express Code Central Example:
+' Developer Express Code Central Example:
 ' Scheduler - How to implement a custom Edit Appointment Form with custom fields
 ' 
 ' This example illustrates how to implement a custom Appointment Form and display
@@ -22,10 +22,8 @@
 ' 
 ' You can find sample updates and versions for different programming languages here:
 ' http://www.devexpress.com/example=E4520
-
 Imports System.Collections
 Imports System.Linq
-Imports DevExpressMvcApplication1
 Imports DevExpress.Web.Mvc
 Imports System.ComponentModel.DataAnnotations
 Imports System
@@ -35,43 +33,47 @@ Imports DevExpress.Web.ASPxScheduler
 Imports DevExpress.XtraScheduler
 
 Public Class SchedulerDataObject
-    Public Property Appointments() As IEnumerable
-    Public Property Resources() As IEnumerable
+
+    Public Property Appointments As IEnumerable
+
+    Public Property Resources As IEnumerable
 End Class
 
 Public Class SchedulerDataHelper
+
     Public Shared Function GetResources() As IEnumerable
-        Dim db As New CarsDataContext()
-        Return From res In db.Cars _
-               Select res
+        Dim db As CarsDataContext = New CarsDataContext()
+        Return From res In db.Cars Select res
     End Function
+
     Public Shared Function GetAppointments() As IEnumerable
-        Dim db As New CarsDataContext()
-        Return From apt In db.CarSchedulings _
-               Select apt
+        Dim db As CarsDataContext = New CarsDataContext()
+        Return From apt In db.CarSchedulings Select apt
     End Function
+
     Public Shared Iterator Function GetReminders(ByVal rawDataSource As IEnumerable) As IEnumerable
         For Each item As ListEditItem In rawDataSource
-            Yield New With {Key .Value = item.Value, Key .Text = item.Text}
-        Next item
+            Yield New With {item.Value, item.Text}
+        Next
     End Function
-    Public Shared ReadOnly Property DataObject() As SchedulerDataObject
+
+    Public Shared ReadOnly Property DataObject As SchedulerDataObject
         Get
             Return New SchedulerDataObject() With {.Appointments = GetAppointments(), .Resources = GetResources()}
         End Get
     End Property
 
-    Private Shared defaultAppointmentStorage_Renamed As MVCxAppointmentStorage
-    Public Shared ReadOnly Property DefaultAppointmentStorage() As MVCxAppointmentStorage
+    Private Shared defaultAppointmentStorageField As MVCxAppointmentStorage
+
+    Public Shared ReadOnly Property DefaultAppointmentStorage As MVCxAppointmentStorage
         Get
-            If defaultAppointmentStorage_Renamed Is Nothing Then
-                defaultAppointmentStorage_Renamed = CreateDefaultAppointmentStorage()
-            End If
-            Return defaultAppointmentStorage_Renamed
+            If defaultAppointmentStorageField Is Nothing Then defaultAppointmentStorageField = CreateDefaultAppointmentStorage()
+            Return defaultAppointmentStorageField
         End Get
     End Property
+
     Private Shared Function CreateDefaultAppointmentStorage() As MVCxAppointmentStorage
-        Dim appointmentStorage As New MVCxAppointmentStorage()
+        Dim appointmentStorage As MVCxAppointmentStorage = New MVCxAppointmentStorage()
         appointmentStorage.Mappings.AppointmentId = "ID"
         appointmentStorage.Mappings.Start = "StartTime"
         appointmentStorage.Mappings.End = "EndTime"
@@ -91,40 +93,34 @@ Public Class SchedulerDataHelper
         Return appointmentStorage
     End Function
 
-    Private Shared defaultResourceStorage_Renamed As MVCxResourceStorage
-    Public Shared ReadOnly Property DefaultResourceStorage() As MVCxResourceStorage
+    Private Shared defaultResourceStorageField As MVCxResourceStorage
+
+    Public Shared ReadOnly Property DefaultResourceStorage As MVCxResourceStorage
         Get
-            If defaultResourceStorage_Renamed Is Nothing Then
-                defaultResourceStorage_Renamed = CreateDefaultResourceStorage()
-            End If
-            Return defaultResourceStorage_Renamed
+            If defaultResourceStorageField Is Nothing Then defaultResourceStorageField = CreateDefaultResourceStorage()
+            Return defaultResourceStorageField
         End Get
     End Property
+
     Private Shared Function CreateDefaultResourceStorage() As MVCxResourceStorage
-        Dim resourceStorage As New MVCxResourceStorage()
+        Dim resourceStorage As MVCxResourceStorage = New MVCxResourceStorage()
         resourceStorage.Mappings.ResourceId = "ID"
         resourceStorage.Mappings.Caption = "Model"
         Return resourceStorage
     End Function
+
     Public Shared Sub InsertAppointment(ByVal appt As CarScheduling)
-        If appt Is Nothing Then
-            Return
-        End If
-        Dim db As New CarsDataContext()
+        If appt Is Nothing Then Return
+        Dim db As CarsDataContext = New CarsDataContext()
         appt.ID = appt.GetHashCode()
         db.CarSchedulings.InsertOnSubmit(appt)
         db.SubmitChanges()
     End Sub
-    Public Shared Sub UpdateAppointment(ByVal appt As CarScheduling)
-        If appt Is Nothing Then
-            Return
-        End If
-        Dim db As New CarsDataContext()
-        Dim query As CarScheduling = CType(( _
-            From carSchedule In db.CarSchedulings _
-            Where carSchedule.ID = appt.ID _
-            Select carSchedule).SingleOrDefault(), CarScheduling)
 
+    Public Shared Sub UpdateAppointment(ByVal appt As CarScheduling)
+        If appt Is Nothing Then Return
+        Dim db As CarsDataContext = New CarsDataContext()
+        Dim query As CarScheduling = CType((From carSchedule In db.CarSchedulings Where carSchedule.ID = appt.ID Select carSchedule).SingleOrDefault(), CarScheduling)
         query.ID = appt.ID
         query.StartTime = appt.StartTime
         query.EndTime = appt.EndTime
@@ -142,12 +138,10 @@ Public Class SchedulerDataHelper
         query.Price = appt.Price
         db.SubmitChanges()
     End Sub
+
     Public Shared Sub RemoveAppointment(ByVal appt As CarScheduling)
-        Dim db As New CarsDataContext()
-        Dim query As CarScheduling = CType(( _
-            From carSchedule In db.CarSchedulings _
-            Where carSchedule.ID = appt.ID _
-            Select carSchedule).SingleOrDefault(), CarScheduling)
+        Dim db As CarsDataContext = New CarsDataContext()
+        Dim query As CarScheduling = CType((From carSchedule In db.CarSchedulings Where carSchedule.ID = appt.ID Select carSchedule).SingleOrDefault(), CarScheduling)
         db.CarSchedulings.DeleteOnSubmit(query)
         db.SubmitChanges()
     End Sub
@@ -160,39 +154,44 @@ Public Class CustomAppointmentTemplateContainer
         MyBase.New(scheduler)
     End Sub
 
-    Public Shadows ReadOnly Property ResourceDataSource() As IEnumerable
+    Public Overloads ReadOnly Property ResourceDataSource As IEnumerable
         Get
             Return SchedulerDataHelper.GetResources()
         End Get
     End Property
-    Public Shadows ReadOnly Property ReminderDataSource() As IEnumerable
+
+    Public Overloads ReadOnly Property ReminderDataSource As IEnumerable
         Get
             Return SchedulerDataHelper.GetReminders(MyBase.ReminderDataSource)
         End Get
     End Property
-    Public ReadOnly Property ContactInfo() As String
+
+    Public ReadOnly Property ContactInfo As String
         Get
             Return Convert.ToString(Appointment.CustomFields("ContactInfo"))
         End Get
     End Property
-    Public ReadOnly Property Price() As Decimal?
+
+    Public ReadOnly Property Price As Decimal?
         Get
             Dim priceRawValue As Object = Appointment.CustomFields("Price")
-            Return If(priceRawValue Is DBNull.Value, 0, DirectCast(priceRawValue, Decimal?))
+            Return If(priceRawValue Is DBNull.Value, 0, CType(priceRawValue, Decimal?))
         End Get
     End Property
-    Public ReadOnly Property CarId() As Integer?
-        Get
 
-            Dim carId_Renamed As Object = Appointment.ResourceId
-            Return If(carId_Renamed Is ResourceEmpty.Id, 1, DirectCast(carId_Renamed, Integer?)) ' select first resource if empty
+    Public ReadOnly Property CarId As Integer?
+        Get
+            Dim lCarId As Object = Appointment.ResourceId
+            Return If(lCarId Is ResourceEmpty.Id, 1, CType(lCarId, Integer?)) ' select first resource if empty
         End Get
     End Property
 End Class
 
 Public Class Schedule
+
     Public Sub New()
     End Sub
+
     Public Sub New(ByVal carScheduling As CarScheduling)
         If carScheduling IsNot Nothing Then
             ID = carScheduling.ID
@@ -213,26 +212,42 @@ Public Class Schedule
         End If
     End Sub
 
-    Public Property ID() As Integer
-    Public Property EventType() As Integer?
-    Public Property Label() As Integer?
-    Public Property AllDay() As Boolean
-    Public Property Location() As String
-    Public Property CarId() As Object
-    Public Property Status() As Integer?
-    Public Property RecurrenceInfo() As String
-    Public Property ReminderInfo() As String
-    <Required(ErrorMessage := "The Subject must contain at least one character.")> _
-    Public Property Subject() As String
-    Public Property Price() As Decimal?
-    <Required> _
-    Public Property StartTime() As Date
-    <Required> _
-    Public Property EndTime() As Date
-    Public Property Description() As String
-    Public Property ContactInfo() As String
-    Public Property HasReminder() As Boolean
-    Public Property Reminder() As Reminder
+    Public Property ID As Integer
+
+    Public Property EventType As Integer?
+
+    Public Property Label As Integer?
+
+    Public Property AllDay As Boolean
+
+    Public Property Location As String
+
+    Public Property CarId As Object
+
+    Public Property Status As Integer?
+
+    Public Property RecurrenceInfo As String
+
+    Public Property ReminderInfo As String
+
+    <Required(ErrorMessage:="The Subject must contain at least one character.")>
+    Public Property Subject As String
+
+    Public Property Price As Decimal?
+
+    <Required>
+    Public Property StartTime As Date
+
+    <Required>
+    Public Property EndTime As Date
+
+    Public Property Description As String
+
+    Public Property ContactInfo As String
+
+    Public Property HasReminder As Boolean
+
+    Public Property Reminder As Reminder
 
     Public Overridable Sub Assign(ByVal source As Schedule)
         If source IsNot Nothing Then

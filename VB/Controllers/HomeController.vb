@@ -1,4 +1,4 @@
-﻿' Developer Express Code Central Example:
+' Developer Express Code Central Example:
 ' Scheduler - How to implement a custom Edit Appointment Form with custom fields
 ' 
 ' This example illustrates how to implement a custom Appointment Form and display
@@ -22,26 +22,17 @@
 ' 
 ' You can find sample updates and versions for different programming languages here:
 ' http://www.devexpress.com/example=E4520
-
-Imports System
-Imports System.Collections.Generic
-Imports System.Linq
-Imports System.Web
 Imports System.Web.Mvc
-Imports DevExpress.Web.ASPxScheduler
 Imports DevExpress.Web.Mvc
-Imports DevExpress.XtraScheduler
-Imports DevExpressMvcApplication1
 Imports DevExpressMvcApplication1.Models
-Imports System.Collections
 
 Namespace DevExpressMvcApplication1.Views
+
     Public Class HomeController
         Inherits Controller
 
         '
         ' GET: /Home/
-
         Public Function Index() As ActionResult
             Return View(SchedulerDataHelper.DataObject)
         End Function
@@ -58,18 +49,16 @@ Namespace DevExpressMvcApplication1.Views
         Private Sub UpdateAppointment()
             Dim insertedAppt As CarScheduling = SchedulerExtension.GetAppointmentToInsert(Of CarScheduling)("scheduler", SchedulerDataHelper.GetAppointments(), SchedulerDataHelper.GetResources(), SchedulerDataHelper.DefaultAppointmentStorage, SchedulerDataHelper.DefaultResourceStorage)
             SchedulerDataHelper.InsertAppointment(insertedAppt)
-
             ViewData("EditableSchedule") = insertedAppt
-
-            Dim updatedAppt() As CarScheduling = SchedulerExtension.GetAppointmentsToUpdate(Of CarScheduling)("scheduler", SchedulerDataHelper.GetAppointments(), SchedulerDataHelper.GetResources(), SchedulerDataHelper.DefaultAppointmentStorage, SchedulerDataHelper.DefaultResourceStorage)
+            Dim updatedAppt As CarScheduling() = SchedulerExtension.GetAppointmentsToUpdate(Of CarScheduling)("scheduler", SchedulerDataHelper.GetAppointments(), SchedulerDataHelper.GetResources(), SchedulerDataHelper.DefaultAppointmentStorage, SchedulerDataHelper.DefaultResourceStorage)
             For Each appt In updatedAppt
                 SchedulerDataHelper.UpdateAppointment(appt)
-            Next appt
+            Next
 
-            Dim removedAppt() As CarScheduling = SchedulerExtension.GetAppointmentsToRemove(Of CarScheduling)("scheduler", SchedulerDataHelper.GetAppointments(), SchedulerDataHelper.GetResources(), SchedulerDataHelper.DefaultAppointmentStorage, SchedulerDataHelper.DefaultResourceStorage)
+            Dim removedAppt As CarScheduling() = SchedulerExtension.GetAppointmentsToRemove(Of CarScheduling)("scheduler", SchedulerDataHelper.GetAppointments(), SchedulerDataHelper.GetResources(), SchedulerDataHelper.DefaultAppointmentStorage, SchedulerDataHelper.DefaultResourceStorage)
             For Each appt In removedAppt
                 SchedulerDataHelper.RemoveAppointment(appt)
-            Next appt
+            Next
         End Sub
     End Class
 End Namespace
