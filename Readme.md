@@ -29,7 +29,7 @@ settings.OptionsForms.SetAppointmentFormTemplateContent(c => {
 });
 ```
 
-Create an [AppointmentFormTemplateContainer](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxScheduler.AppointmentFormTemplateContainer) to add custom fields to your appointment form and handle the control's server-side [ASPxScheduler.AppointmentFormShowing](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxScheduler.ASPxScheduler.AppointmentFormShowing) event to replace the default container with the custom one.
+Create an [AppointmentFormTemplateContainer](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxScheduler.AppointmentFormTemplateContainer) to add custom fields to your appointment form and handle the control's server-side [ASPxScheduler.AppointmentFormShowing](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxScheduler.ASPxScheduler.AppointmentFormShowing) event to replace the default container with the custom container.
 
 ```cshtml
 settings.AppointmentFormShowing = (sender, e) => {
