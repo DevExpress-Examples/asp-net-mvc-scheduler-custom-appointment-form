@@ -1,36 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')">
-  </Import>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"></Import>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
+    <ProductVersion></ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B5FBB010-C228-4B43-B6B6-18B0D369A1CE}</ProjectGuid>
     <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <AssemblyName>DevExpressMvcApplication1</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
-    <IISExpressSSLPort>
-    </IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication>
-    </IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>
-    </IISExpressWindowsAuthentication>
-    <IISExpressUseClassicPipelineMode>
-    </IISExpressUseClassicPipelineMode>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
+    <IISExpressSSLPort></IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication></IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication></IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode></IISExpressUseClassicPipelineMode>
+    <FileUpgradeFlags></FileUpgradeFlags>
+    <UpgradeBackupLocation></UpgradeBackupLocation>
     <OldToolsVersion>4.5</OldToolsVersion>
     <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
   </PropertyGroup>
@@ -52,72 +43,60 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.SpellChecker.v15.2.Core, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxPivotGrid.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxScheduler.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxScheduler.v15.2.Design, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxSpellChecker.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.ASPxTreeList.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.Mvc.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Web.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v15.2.Web, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPivotGrid.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.CodeParser.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v15.2.Web, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.20.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="Microsoft.CSharp">
-    </Reference>
-    <Reference Include="System">
-    </Reference>
-    <Reference Include="System.Data">
-    </Reference>
-    <Reference Include="System.Data.Linq">
-    </Reference>
-    <Reference Include="System.Drawing">
-    </Reference>
-    <Reference Include="System.Web.DynamicData">
-    </Reference>
-    <Reference Include="System.Web.Entity">
-    </Reference>
-    <Reference Include="System.Web.ApplicationServices">
-    </Reference>
-    <Reference Include="System.ComponentModel.DataAnnotations">
-    </Reference>
-    <Reference Include="System.Core">
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-    </Reference>
-    <Reference Include="System.Web">
-    </Reference>
-    <Reference Include="System.Web.Extensions">
-    </Reference>
-    <Reference Include="System.Web.Abstractions">
-    </Reference>
-    <Reference Include="System.Web.Routing">
-    </Reference>
-    <Reference Include="System.Xml">
-    </Reference>
-    <Reference Include="System.Configuration">
-    </Reference>
-    <Reference Include="System.Web.Services">
-    </Reference>
-    <Reference Include="System.EnterpriseServices">
-    </Reference>
+    <Reference Include="DevExpress.Charts.v24.2.Core, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v24.2.Core, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v24.2.Core, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v24.2.Export, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v24.2.Core, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.SpellChecker.v24.2.Core, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v24.2.Design, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxGantt.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Mvc.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v24.2.Core, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v24.2.Core, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v24.2.Web, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v24.2.Extensions, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v24.2.Core, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Web.Resources.v24.2, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v24.2.Web.WebForms, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v24.2.Web, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v24.2.Core.Desktop, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v24.2.Core, Version=24.2.1.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.CSharp"></Reference>
+    <Reference Include="System"></Reference>
+    <Reference Include="System.Data"></Reference>
+    <Reference Include="System.Data.Linq"></Reference>
+    <Reference Include="System.Drawing"></Reference>
+    <Reference Include="System.Web.DynamicData"></Reference>
+    <Reference Include="System.Web.Entity"></Reference>
+    <Reference Include="System.Web.ApplicationServices"></Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations"></Reference>
+    <Reference Include="System.Core"></Reference>
+    <Reference Include="System.Data.DataSetExtensions"></Reference>
+    <Reference Include="System.Xml.Linq"></Reference>
+    <Reference Include="System.Web"></Reference>
+    <Reference Include="System.Web.Extensions"></Reference>
+    <Reference Include="System.Web.Abstractions"></Reference>
+    <Reference Include="System.Web.Routing"></Reference>
+    <Reference Include="System.Xml"></Reference>
+    <Reference Include="System.Configuration"></Reference>
+    <Reference Include="System.Web.Services"></Reference>
+    <Reference Include="System.EnterpriseServices"></Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.Mvc.3.0.50813.1\lib\net40\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
@@ -148,42 +127,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\CarsDB.mdf">
-    </Content>
-    <Content Include="App_Data\CarsDB_log.ldf">
-    </Content>
-    <Content Include="Global.asax">
-    </Content>
-    <Content Include="Scripts\MicrosoftAjax.debug.js">
-    </Content>
-    <Content Include="Scripts\MicrosoftAjax.js">
-    </Content>
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js">
-    </Content>
-    <Content Include="Scripts\MicrosoftMvcAjax.js">
-    </Content>
-    <Content Include="Scripts\MicrosoftMvcValidation.debug.js">
-    </Content>
-    <Content Include="Scripts\MicrosoftMvcValidation.js">
-    </Content>
-    <Content Include="Scripts\modernizr-1.7.js">
-    </Content>
-    <Content Include="Scripts\modernizr-1.7.min.js">
-    </Content>
-    <Content Include="Web.Debug.config">
-    </Content>
+    <Content Include="App_Data\CarsDB.mdf"></Content>
+    <Content Include="App_Data\CarsDB_log.ldf"></Content>
+    <Content Include="Global.asax"></Content>
+    <Content Include="Scripts\MicrosoftAjax.debug.js"></Content>
+    <Content Include="Scripts\MicrosoftAjax.js"></Content>
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js"></Content>
+    <Content Include="Scripts\MicrosoftMvcAjax.js"></Content>
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js"></Content>
+    <Content Include="Scripts\MicrosoftMvcValidation.js"></Content>
+    <Content Include="Scripts\modernizr-1.7.js"></Content>
+    <Content Include="Scripts\modernizr-1.7.min.js"></Content>
+    <Content Include="Web.Debug.config"></Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.Release.config">
-    </Content>
+    <Content Include="Web.Release.config"></Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config">
-    </Content>
+    <Content Include="Web.config"></Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Web.config">
-    </Content>
+    <Content Include="Views\Web.config"></Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.vb">
@@ -194,20 +158,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cars.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.vb">
-    </Compile>
-    <Compile Include="Models\Scheduling.vb">
-    </Compile>
-    <Compile Include="Controllers\HomeController.vb">
-    </Compile>
+    <Compile Include="Properties\AssemblyInfo.vb"></Compile>
+    <Compile Include="Models\Scheduling.vb"></Compile>
+    <Compile Include="Controllers\HomeController.vb"></Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Layout.cshtml">
-    </Content>
+    <Content Include="Views\Shared\_Layout.cshtml"></Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\_ViewStart.cshtml">
-    </Content>
+    <Content Include="Views\_ViewStart.cshtml"></Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Cars.dbml">
@@ -215,37 +174,28 @@
       <LastGenOutput>Cars.designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Home\Index.cshtml">
-    </Content>
-    <Content Include="Views\Home\SchedulerPartial.cshtml">
-    </Content>
-    <Content Include="Views\Home\CustomAppointmentFormPartial.cshtml">
-    </Content>
+    <Content Include="Views\Home\Index.cshtml"></Content>
+    <Content Include="Views\Home\SchedulerPartial.cshtml"></Content>
+    <Content Include="Views\Home\CustomAppointmentFormPartial.cshtml"></Content>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}">
-    </Service>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}"></Service>
   </ItemGroup>
   <ItemGroup>
     <None Include="Models\Cars.dbml.layout">
       <DependentUpon>Cars.dbml</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
+  <ItemGroup></ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets">
-  </Import>
-  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''">
-  </Import>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v11.0\WebApplications\Microsoft.WebApplication.targets" Condition="false">
-  </Import>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets"></Import>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''"></Import>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v11.0\WebApplications\Microsoft.WebApplication.targets" Condition="false"></Import>
   <Target AfterTargets="AfterBuild" Name="MvcBuildViews" Condition="'$(MvcBuildViews)'=='true'">
-    <AspNetCompiler PhysicalPath="$(WebProjectOutputDir)" VirtualPath="temp">
-    </AspNetCompiler>
+    <AspNetCompiler PhysicalPath="$(WebProjectOutputDir)" VirtualPath="temp"></AspNetCompiler>
   </Target>
   <ProjectExtensions>
     <VisualStudio>
@@ -255,12 +205,10 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61862</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl></IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl></CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
